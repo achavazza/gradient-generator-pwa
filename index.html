@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Generador de degradados para CSS en tiempo real hecho en el curso de VUE3">
+
+    
+    <!-- Metadata para PWA -->
+    <!-- Modificar la barra de estado para ANDROID -->
+    <meta name="theme-color" content="#F5F5DC">
+    
+    <!-- Optimizaciones de SEO -->
+    <meta name="MobileOptimized" content="width">
+    <meta name="HandheldFruendly" content="true">
+    
+    <!-- Modificar Barra de estado en iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <title>Vue Gradient Gen</title>
+        
+    <!-- Iconos -->
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="./img/icon512.png">
+    <link rel="apple-touch-startapp-image" href="./img/icon512.png">
+    
+    <!-- Manifest -->
+    <link rel="manifest" href="./manifest.json">
+
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h1>{{title}}</h1>
+        <hr />
+        <form>
+            <label> Color 1: <input type="color" v-model="fcolor" name="" id=""> </label>
+            <label> Color 2: <input type="color" v-model="scolor" name="" id=""> </label>
+            
+            <p>Hex 1: {{fcolor}}</p>
+            <p>Hex 2: {{scolor}}</p>
+            
+            <div>
+                <label><input type="radio" value="1" v-model.number="orientation"> Right</label>
+                <label><input type="radio" value="2" v-model.number="orientation"> Left</label>
+                <label><input type="radio" value="3" v-model.number="orientation"> Top</label>
+                <label><input type="radio" value="4" v-model.number="orientation"> Bottom</label>
+            </div>
+
+            <label>
+                <input class="valuecss" type="text" :value="setColor" />
+            </label>
+        </form>
+    
+        
+
+        <div class="area" :style="setColor"></div>
+
+    </div>
+    <script src="./load.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/mountApp.js"></script>
+</body>
+
+</html>
